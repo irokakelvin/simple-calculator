@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>project calculator</title>
+    <link rel="stylesheet" href="../calc2/index.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row mx-auto">
+        <div class="col-12 col-md-12">
+          <div class="justify-content-center d-flex">
+            <div
+              class="screen-edge"
+              style="
+                height: 550px;
+                width: 450px;
+                background-color: rgb(40, 38, 38);
+                margin-top: 20px;
+                border-radius: 8px;
+                border: 8px solid black;
+                border-bottom: 10px solid black;
+              "
+            >
+              <div
+                class="main-screen mx-2 my-5 px-3 py-2"
+                style="
+                  height: 80px;
+                  width: 420px;
+                  background-color: white;
+                  border: 8px solid black;
+                  border-radius: 10px;
+                "
+              >
+                <div
+                  class="calc-screen"
+                  style="
+                    height: 51px;
+                    width: 371px;
+                    background-color: rgb(155, 194, 197);
+                    border: 2px solid black;
+                    border-radius: 4px;
+                  "
+                  id="calc-screen"
+                >
+                  <div
+                    class="inner-screen"
+                    style="
+                      height: 24px;
+                      width: 367px;
+                      background-color: rgb(155, 194, 197);
+                    "
+                    id="inner-screen"
+                  ></div>
+                  <div
+                    class="results"
+                    style="
+                      height: 24px;
+                      width: 367px;
+                      background-color: rgb(155, 194, 197);
+                      text-align: right;
+                    "
+                    id="results"
+                  ></div>
+                </div>
+              </div>
+              <div class="calc-btn d-flex mt-2 mx-3">
+                <div class="btns-style bg-secondary" id="cee">C</div>
+                <div class="btns-style bg-secondary" id="bracket">()</div>
+                <div class="btns-style bg-secondary" id="percentage">%</div>
+                <div class="btns-style bg-secondary" id="division">/</div>
+              </div>
+
+              <div class="calc-btn d-flex mx-3">
+                <div class="btns-style" id="seven">7</div>
+                <div class="btns-style" id="eight">8</div>
+                <div class="btns-style" id="nine">9</div>
+                <div class="btns-style bg-secondary" id="multiplication">*</div>
+              </div>
+
+              <div class="calc-btn d-flex mx-3">
+                <div class="btns-style" id="four">4</div>
+                <div class="btns-style" id="five">5</div>
+                <div class="btns-style" id="six">6</div>
+                <div class="btns-style bg-secondary" id="minus">-</div>
+              </div>
+              <div class="calc-btn d-flex mx-3">
+                <div class="btns-style" id="one">1</div>
+                <div class="btns-style" id="two">2</div>
+                <div class="btns-style" id="three">3</div>
+                <div class="btns-style bg-secondary" id="plus">+</div>
+              </div>
+              <div class="calc-btn d-flex mx-3">
+                <div class="btns-style" id="plusMinus">+/-</div>
+                <div class="btns-style" id="zero">0</div>
+                <div class="btns-style" id="full-stop">.</div>
+                <div class="btns-style bg-secondary" id="equal">=</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const screenElement = document.getElementById("inner-screen");
+    const resultElement = document.getElementById("results");
+    const ceeElement = document.getElementById("cee");
+    const bracketElement = document.getElementById("bracket");
+    const percentElement = document.getElementById("percentage");
+    const divideElement = document.getElementById("division");
+    const sevenElement = document.getElementById("seven");
+    const eightElement = document.getElementById("eight");
+    const nineElement = document.getElementById("nine");
+    const multiElement = document.getElementById("multiplication");
+    const fourElement = document.getElementById("four");
+    const fiveElement = document.getElementById("five");
+    const sixElement = document.getElementById("six");
+    const minusElement = document.getElementById("minus");
+    const oneElement = document.getElementById("one");
+    const twoElement = document.getElementById("two");
+    const threeElement = document.getElementById("three");
+    const plusElement = document.getElementById("plus");
+    const mixedElement = document.getElementById("plusMinus");
+    const zeroElement = document.getElementById("zero");
+    const fstopElement = document.getElementById("full-stop");
+    const equalElement = document.getElementById("equal");
+
+    ceeElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      const text2 = (resultElement.textContent = "");
+      screenElement.innerText = ``;
+    });
+
+    bracketElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}()`;
+    });
+
+    percentElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}%`;
+    });
+
+    divideElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}/`;
+    });
+
+    sevenElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}7`;
+    });
+
+    eightElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}8`;
+    });
+
+    nineElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}9`;
+    });
+
+    multiElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}*`;
+    });
+
+    fourElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}4`;
+    });
+
+    fiveElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}5`;
+    });
+
+    sixElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}6`;
+    });
+
+    minusElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}-`;
+    });
+
+    oneElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}1`;
+    });
+
+    twoElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}2`;
+    });
+
+    threeElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}3`;
+    });
+
+    plusElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}+`;
+    });
+
+    mixedElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}+/-`;
+    });
+
+    zeroElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}0`;
+    });
+
+    fstopElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+      screenElement.innerText = `${text}.`;
+    });
+
+    equalElement.addEventListener("click", function () {
+      let total = screenElement.textContent;
+      total = eval(total);
+      resultElement.innerText = `${total}`;
+    });
+
+    resultElement.addEventListener("click", function () {
+      const text = screenElement.textContent;
+    });
+  </script>
+</html>
